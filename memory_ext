@@ -197,8 +197,8 @@ if ($ARGV[0] and $ARGV[0] eq "config")
 # Any optional value needs to be initialized to zero if it's used in a calculation below
 # and is has not been set by &fetch_meminfo
 
-$anon = $mems{'Active(anon)'} + $mems{'Inactive(anon)'};
-$file = $mems{'Active(file)'} + $mems{'Inactive(file)'};
+my $anon = $mems{'Active(anon)'} + $mems{'Inactive(anon)'};
+my $file = $mems{'Active(file)'} + $mems{'Inactive(file)'};
 
 print "anon.value ", $anon - $mems{'SwapCached'} - $mems{'Shmem'}, "\n";
 print "page_tables.value ", $mems{'PageTables'}, "\n";
